@@ -1,0 +1,79 @@
+<!DOCTYPE html><!-- 註解此為HTML形式網頁 -->
+<html>
+<html lang="zh-tw" >
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" ><!-- 增加一個行動裝置的版面宣告 -->
+    <!-- I know you hate AD, this website is for you! -->
+
+    <title>隨機工具箱|數字產生器</title>
+    <link rel="stylesheet" type="text/css" href="./css/mainstyle.css" ><!-- 引入主要css檔案 -->
+    <script src="./scr/number.js" defer="defer"></script>
+    <style>
+        #value , #out {
+            justify-content: center;
+            text-align: center;
+        }
+        #out > h1 {
+            color: orange;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #start_button {
+            width:120px;
+            height:40px;
+            border:2px blue none;
+            background-color:rgb(62,230,81);
+            border-radius: 5px; 
+            color: white; 
+            font-size: 17px; 
+            font-weight: bold;
+        }
+        #start_button:hover {
+            background-color:rgb(62,230,150);
+            cursor: pointer;/* 移到按鈕上換成點擊的游標圖示 */
+        }
+        input.input_num {
+            display: inline-block;
+            width:125px;
+            height:36px;
+            line-height:20px;
+            font-size:20px;
+        }
+        #result{
+            width: 300px;
+            height: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>    
+</head>
+
+<body>
+    <nav>
+        <ul class="topbar">
+            <li><a class="title" href="./index.html" title="回首頁">隨機工具箱</a></li>
+            <li><a href="./number.html" title="隨機數字產生器" style="font-weight: bold; color: bisque;">數字產生器</a></li>
+        </ul>    
+    </nav>
+
+    <br />
+
+    <div id="value">
+         從 <input type="number" name="input_start" class="input_num" id="input_start" step="1" placeholder="" required="required" autofocus="autofocus" >
+         到 <input type="number" name="input_end" class="input_num" id="input_end" step="1" placeholder="" required="required" ><br /><br />
+         取 <input type="number" name="input_count" class="input_num" id="input_count" step="1" min="1" placeholder="" required="required" > 個數字<br /><br />
+        <input type="checkbox" value="由小到大排序輸出結果" class="checkbox" id="sortout" name="sortout" >
+        <label for="sortout">由小到大排序抽選結果</label><br /><br />
+        <input type="checkbox" value="允許產生重複數字" class="checkbox" id="acceptrepeat" name="acceptrepeat" >
+        <label for="acceptrepeat">允許產生重複數字</label><br /><br />
+        <input type="button" value="產生隨機數字" class="start_button" id="start_button" >
+    </div>
+
+    <div id="out">
+        <h1>抽選結果</h1>
+        <textarea id="result" readonly="readonly"></textarea>
+    </div>
+</body>
+</html>

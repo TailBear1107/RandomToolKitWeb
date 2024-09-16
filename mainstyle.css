@@ -1,0 +1,56 @@
+body{
+    background: white;
+    color: black;
+}
+@media(prefers-color-scheme: light){
+    body{
+    background: white;
+    color: black;
+    }
+}
+@media(prefers-color-scheme: dark){
+    body{
+    background: rgb(35,35,35);
+    color: white;
+    }
+}
+/* 深色模式自動切換 */
+
+a.title {
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white; /* 超連結顏色改白色 */
+    text-decoration: none; /* 移除超連結底線 */
+    display: block; /* 讓 <a> 填滿 <li> */
+    padding: 10px;
+}
+
+nav > ul {
+    color: white;
+    list-style: none; /* 移除項目符號 */
+    background-color: black;
+    display: inline-block; 
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar > li {
+    display: inline-block;
+}
+
+nav li:hover {
+    background-color: rgb(115, 115, 115);
+    color: white;
+    border-radius: 10px;
+}
+
+.topbar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
