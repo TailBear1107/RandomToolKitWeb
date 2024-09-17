@@ -7,7 +7,7 @@ function numsort(a,b){
     }
     return 0;
 }
-//數字比較的韓式
+//數字比較的函式
 
 window.addEventListener("keyup",function(event){
     event.preventDefault();
@@ -26,8 +26,28 @@ el.onclick = function proc(){
     end = inputElement.valueAsNumber;
     inputElement = document.getElementById("input_count");
     count = inputElement.valueAsNumber;
+    if(start % 1 != 0){
+        window.alert("輸入數字需為整數");
+        document.getElementById("input_start").value = "";
+    }
+    if(start > Number.MAX_SAFE_INTEGER){
+        window.alert("輸入數字過大！");
+        document.getElementById("input_start").value = "";
+    }
+    if(end % 1 != 0){
+        window.alert("輸入數字需為整數");
+        document.getElementById("input_end").value = "";
+    }
+    if(end > Number.MAX_SAFE_INTEGER){
+        window.alert("輸入數字過大！");
+        document.getElementById("input_end").value = "";
+    }
     if(count <= 0 || count % 1 != 0){
         window.alert("欲產生的數字數量有誤，請修正");
+        document.getElementById("input_count").value = "";
+    }
+    if(count > Number.MAX_SAFE_INTEGER){
+        window.alert("欲產生的數字數量過多！");
         document.getElementById("input_count").value = "";
     }
     //讀值進來
