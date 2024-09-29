@@ -5,11 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" ><!-- 增加一個行動裝置的版面宣告 -->
+    <meta name="description" content="隨機整數產生器、選號器，開源，無廣告">
     <!-- I know you hate AD, this website is for you! -->
 
     <title>隨機工具箱|整數產生器</title>
     <link rel="stylesheet" type="text/css" href="./css/mainstyle.css" ><!-- 引入主要css檔案 -->
     <script src="./scr/number.js" defer="defer"></script>
+    <script src="./scr/randomengine.js" defer="defer"></script>
     <style>
         #value , #out {
             justify-content: center;
@@ -32,7 +34,6 @@
         }
         #start_button:hover {
             background-color:rgb(62,230,150);
-            cursor: pointer;/* 移到按鈕上換成點擊的游標圖示 */
         }
         input.input_num {
             display: inline-block;
@@ -45,7 +46,12 @@
             width: 300px;
             height: 100px;
             text-align: center;
+            font-size: 30px;
+        }
+        #status{
+            font-weight: bold;
             font-size: 20px;
+            color: red;
         }
     </style>    
 </head>
@@ -67,12 +73,13 @@
         <input type="checkbox" value="由小到大排序輸出結果" class="checkbox" id="sortout" name="sortout" >
         <label for="sortout">由小到大排序抽選結果</label><br /><br />
         <input type="checkbox" value="允許產生重複數字" class="checkbox" id="acceptrepeat" name="acceptrepeat" >
-        <label for="acceptrepeat">允許產生重複數字</label><br /><br />
+        <label for="acceptrepeat">允許於一次抽選產生重複數字</label><br /><br />
         <input type="button" value="產生隨機數字" class="start_button" id="start_button" >
     </div>
 
     <div id="out">
         <h1>抽選結果</h1>
+        <div id="status"></div>
         <textarea id="result" readonly="readonly"></textarea>
     </div>
 </body>
